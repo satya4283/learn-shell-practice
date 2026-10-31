@@ -27,12 +27,14 @@ fi
 
 for package in $@
 do
-    dnf list installed $package 
+    dnf list installed ${package} &>>$logs_file
     if [ $? -ne 0 ]; then 
         echo "Going to install ${package}"
         dnf install $package -y &>>$logs_file
         validate $? "Installing ${package}"
     else
-        echo "${package} is already installed...SKIPPING"
+        echo "${package} is already installed...SKIPPING" |tee -a $logs_file
     fi
 done
+
+echo "Script completed execution at:: $(date +"%F %T")" &>>$logs_file
