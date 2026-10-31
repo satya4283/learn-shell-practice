@@ -10,6 +10,8 @@ if [ $user_id -ne 0 ]; then
     exit 1
 fi
 
+echo "Script stated execution at:: ${date +%F %T}"
+
 mkdir -p $logs_folder
 
 validate(){
@@ -31,3 +33,4 @@ dnf install mysql -y &>>$logs_file
 validate $? "Mysql installation" 
 
 
+echo "Script completed execution at:: ${date +%F %T}"
