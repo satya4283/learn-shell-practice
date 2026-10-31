@@ -9,7 +9,7 @@ END_TIME=$(date +%s)
 
 echo "Script completed at:: $END_TIME"
 
-TOTAL_TIME=$(($START_TIME+$END_TIME))
+TOTAL_TIME=$(($END_TIME-$START_TIME))
 
-echo "Total exection time:: $TOTAL_TIME"
+echo "Total exection time:: $TOTAL_TIME Seconds"
 
