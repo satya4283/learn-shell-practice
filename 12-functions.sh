@@ -22,7 +22,7 @@ dnf install nginx -y
 validate $? "Nginx installation"
 
 
-dnf install mysqlll -y
+dnf install mysql -y
 validate $? "Mysql installation"
 
 
